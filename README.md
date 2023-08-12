@@ -41,3 +41,16 @@ Evaluation pipeline:
 bash eval_pipeline.sh
 bash eval_permutations_pipeline.sh
 ```
+
+## Citation
+
+```
+@misc{chen2023robust,
+      title={Towards Robust Personalized Dialogue Generation via Order-Insensitive Representation Regularization}, 
+      author={Liang Chen and Hongru Wang and Yang Deng and Wai-Chung Kwan and Zezhong Wang and Kam-Fai Wong},
+      year={2023},
+      eprint={2305.12782},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
