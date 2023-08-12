@@ -2,37 +2,16 @@
 export CUDA_VISIBLE_DEVICES=0,3
 # python persona_train.py \
 time=`date '+%F-%H:%M:%S'`
+exp_name='YOUR_EXP_NAME'
+ckp_path=./gpt2-base/pytorch_model.bin
 
-# path=./base-model
-# ckp=./base-model/small_ft.pkl
-
-path=./gpt2-base
-ckp=./gpt2-base/pytorch_model.bin
-
-
-# exp_name='w_persona_label_shuffle'
-# exp_name='w_persona_label_eos_response_unshuffle'
-# exp_name='w_persona_label_eos_response_shuffle'
-# exp_name='w_persona_label_wo_threshold_eos_response_shuffle'
-# exp_name=naive_dialogpt_base
-# exp_name=naive_gpt2_base
-# exp_name=naive_gpt2_base_single_turn
-
-
-# exp_name=gpt2_base_joint_decoding_wo_typeId # use decoding_3D.py, wo_typeId=True
 no_token_id=True
 new_type_ids=False
 
-# for debug
 small_data=False
 visualize_train_data=False
-
-# exp_name=gpt2_base_joint_decoding_wo_typeId_only_persona_response
-exp_name=gpt2_base_baseline_wo_typeId_only_persona_response
 only_persona_response=True
-
 single_turn=False
-# input_persona_label=True
 input_persona_label=False
 
 python -m torch.distributed.launch --nproc_per_node=2 ./persona_train.py  \
@@ -62,4 +41,3 @@ python -m torch.distributed.launch --nproc_per_node=2 ./persona_train.py  \
 --single_turn $single_turn \
 --only_persona_response $only_persona_response \
 --with_persona_label $input_persona_label 1>log/persona/res_${exp_name}_${time} 2>log/persona/err_${exp_name}_${time}
-# --with_persona_label $input_persona_label

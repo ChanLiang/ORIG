@@ -1,6 +1,5 @@
 
 export CUDA_VISIBLE_DEVICES=1,2
-# export CUDA_VISIBLE_DEVICES=2,0
 # python persona_train.py \
 time=`date '+%F-%H:%M:%S'`
 
@@ -52,4 +51,3 @@ python -m torch.distributed.launch --nproc_per_node=2  ./persona_train_kl.py.py 
 --single_turn $single_turn \
 --only_persona_response $only_persona_response \
 --with_persona_label $input_persona_label 1>log/persona/res_${exp_name}_${time} 2>log/persona/err_${exp_name}_${time}
-# --with_persona_label $input_persona_label
