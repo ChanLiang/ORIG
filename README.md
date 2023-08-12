@@ -18,17 +18,17 @@ conda activate LSP
 
 #### Training script
 ```bash
-bash train_persona_gpt.sh
-bash train_persona_gpt_kl.sh
+bash scripts/train_persona_gpt.sh
+bash scripts/train_persona_gpt_kl.sh
 ```
 
 #### Model inference
 ```bash
-bash decode_pipeline.sh # for dialogpt
-bash decode_pipeline_naive_gpt.sh # for gpt2
-bash decode_naive_gpt_permutations.sh # decode for all persona permutations
+bash scripts/decode_pipeline.sh # for dialogpt
+bash scripts/decode_pipeline_naive_gpt.sh # for gpt2
+bash scripts/decode_naive_gpt_permutations.sh # decode for all persona permutations
 or
-python decdoing.py
+python scripts/decdoing.py
 ```
 
 ##### Model evaluation
@@ -38,8 +38,8 @@ The Consistency metric is in [PersonaClassifier](https://github.com/ChanLiang/Pe
 
 Evaluation pipeline:
 ```bash
-bash eval_pipeline.sh
-bash eval_permutations_pipeline.sh
+bash scripts/eval_pipeline.sh
+bash scripts/eval_permutations_pipeline.sh
 ```
 
 ## Citation
